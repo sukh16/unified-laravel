@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="main-navigation">
                                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                        <ul class="navbar-nav ml-auto">
+                                    <ul class="navbar-nav ml-auto">
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-item dropdown" href="{{url('/')}}/product-category" id="navbarDropdown"
                                                    >
@@ -76,7 +76,7 @@
                                                 </ul> --}}
                                                 <ul class="dropdown-menu dropdown-content">
                                                 <li class="navBack" tabindex="0"><span>Back</span></li>
-                                               @php
+                                              {{-- @php
                                                 $postLoad = postLoad();
                                                 @endphp
                                                 @if(count($postLoad))
@@ -109,7 +109,7 @@
                                                         </ul>
                                                     </li>
                                                     @endforeach
-                                                    @endif
+                                                    @endif--}}
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
@@ -139,16 +139,16 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link " href="{{url('/')}}/about" id="navbarDropdown"
+                                                <a class="nav-link " href="{{route('About')}}" id="navbarDropdown"
                                                    role="button" aria-expanded="false">
                                                     About Us
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{url('/')}}/contact">Contact Us</a>
+                                                <a class="nav-link" href="{{route('contact_us')}}">Contact Us</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{url('/')}}/career">Career</a>
+                                                <a class="nav-link" href="{{route('career')}}">Career</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="btn btn-primary" href="{{url('/')}}/cart" tabindex="-1" aria-disabled="true">Get Quote</a>

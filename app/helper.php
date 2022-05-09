@@ -6,6 +6,7 @@ use App\Models\ProductSubCategory;
 
 function postLoad()
 {
+    
     $groupCategoryList = [
         'Electromechanical Components' => 'Electromechanical Components',
         'Passive Components' => 'Passive Components',

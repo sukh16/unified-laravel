@@ -64,8 +64,7 @@
         {{--<script defer src="{{url('/')}}/js/jquery.validate.min.js"></script>
         <!-- JS Front -->
         <script defer src="{{asset('assets/frontend/assets/js/custom.js}}"></script>--}}
-        {{--% block script_content %}
-        {% endblock script_content %--}}
+        
         {{-- Zoho chat integration --}}
         <script defer type="text/javascript" id="zsiqchat">
             var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || 

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CareerController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +21,7 @@ use App\Http\Controllers\HomeController;
 //     return view('frontend.index');
 // });
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/career', [CareerController::class, 'career'])->name('career');
+Route::get('/contact-us', [ContactController::class, 'contact_us'])->name('contact_us');
+Route::post('/contact-page-form', [ContactController::class, 'contact_page_form'])->name('contact_page_form');
+Route::get('/about', [AboutController::class, 'About'])->name('About');

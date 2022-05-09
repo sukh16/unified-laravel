@@ -426,7 +426,7 @@
 
         
         <!-- News and Update Section -->
-        {{--@if(count($newsList))
+        @if(count($newsList))
         <section class="section bg-muted top-square-image">
             <div class="container">
                 <div class="row">
@@ -442,28 +442,30 @@
                     <div class="col-md-12">
                         <div class="news-slider-container swiper-container pb-80">
                             <div class="swiper-wrapper">
-                                @foreach($newsList)
+                                @if(count($newsList))
+                                @foreach($newsList as $news)
                                 <div class="swiper-slide">
                                     <div class="news-wrap">
                                         <div class="image-wrap">
-                                            <img width="266" height="324" src="{{url('/')}}/uploads/news/{{news.image}}" alt="{{ news.title }}">
+                                            <img width="266" height="324" src="{{asset('uploads/news/'.$news->image)}}" alt="{{ $news->title }}">
                                         </div>
-                                        <h3>{{ news.title }}</h3>
+                                        <h3>{{$news->name}}</h3>
                                         <ul>
                                             <li>
-                                                <img class="svgImg" src="{{url('/')}}/theme/frontend/assets/images/update.svg" alt="Company Updates">
+                                                <img class="svgImg" src="{{asset('assets/frontend/assets/images/update.svg')}}" alt="Company Updates">
                                                 Company Updates
                                             </li>
                                             <li>
-                                                <img class="svgImg" src="{{url('/')}}/theme/frontend/assets/images/calender.svg" alt="Date">
-                                                {{ news.created_at|date('d M Y') }}
+                                                <img class="svgImg" src="{{asset('assets/frontend/assets/images/calender.svg')}}" alt="Date">
+                                                {{ date('j M Y',strtotime($news->created_at)) }}
                                             </li>
                                         </ul>
-                                        <p>{{ news.description}}</p>
-                                        <a href="{{ path('AboutNewsFront', { 'id': news.id }) }}">Learn more <img class="svgImg" src="{{url('/')}}/theme/frontend/assets/images/left-aerrow.svg" alt="Left"></a>
+                                        <p>{{ $news->description}}</p>
+                                        <a href="">Learn more <img class="svgImg" src="{{asset('assets/frontend/assets/images/left-aerrow.svg')}}" alt="Left"></a>
                                     </div>
                                 </div>
                                 @endforeach
+                                @endif
                             </div>
                             <!-- Add Pagination -->
                             <div class="swiper-pagination"></div>
@@ -477,7 +479,7 @@
                 </div>
             </div>
         </section>
-        @endif--}}
+        @endif
         <!-- End News and Update Section -->
     </main>
     <!-- End Content -->
