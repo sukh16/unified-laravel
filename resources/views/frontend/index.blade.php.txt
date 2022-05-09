@@ -110,7 +110,7 @@
 
        {{-- <!-- Key Principals Section -->
         <section class="section bg-muted">
-            {% if manufactures is not empty %}
+            @if(isset($manufactures))
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -126,19 +126,20 @@
                         <a href="{{$base_url}}/manufacturers" class="seeallmfs">See all Manufacturers</a>
                         <div class="principal-slider-container swiper-container">
                             <div class="swiper-wrapper">
-                            {% for manufacturer in manufactures %}
+                            @foreach($manufactures as $manufacturer)
                                 <div class="swiper-slide">
-                                    <a href="{{$base_url}}/manufacturer-detail/{{manufacturer.id}}" class="principal-wrap" title="{{manufacturer.name}}">
+                                    <a href="{{$base_url}}/manufacturer-detail/{{$manufacturer->id}}" class="principal-wrap" title="{{$manufacturer->name}}">
                                         <div class="image-wrap">
-                                            {% if manufacturer.image is not empty %}
-                                                <img width="281" height="78" src="{{$base_url}}/uploads/manufacturer/{{ manufacturer.image }}" alt="Key Principals">
-                                            {% else %}
+                                            @if(isset($manufacturer))
+                                                <img width="281" height="78" src="{{$base_url}}/uploads/manufacturer/{{ $manufacturer->image }}" alt="Key Principals">
+                                            else{
                                                 <img src="{{$base_url}}/theme/frontend/assets/images/no-images.webp" alt="Key Principals">
-                                            {% endif %}
+                                            }
+                                            @endif
                                         </div>
                                     </a>
                                 </div>
-                            {% endfor %}
+                                @endforeach
                             </div>
                             <!-- Add Pagination -->
                             <div class="swiper-pagination"></div>
@@ -146,7 +147,7 @@
                     </div>
                 </div>
             </div>
-             {% endif %}
+            @endif
         </section>
         <!-- End Key Principals Section -->--}}
 

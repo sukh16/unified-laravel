@@ -108,9 +108,10 @@
         </section>
         <!-- End Support Section -->
 
-       {{-- <!-- Key Principals Section -->
+       <!-- Key Principals Section -->
         <section class="section bg-muted">
-            {% if manufactures is not empty %}
+            
+            @if(isset($manufactures))
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -126,19 +127,21 @@
                         <a href="{{url('/')}}/manufacturers" class="seeallmfs">See all Manufacturers</a>
                         <div class="principal-slider-container swiper-container">
                             <div class="swiper-wrapper">
-                            {% for manufacturer in manufactures %}
+                            @foreach($manufactures as $manufacturer)
                                 <div class="swiper-slide">
-                                    <a href="{{url('/')}}/manufacturer-detail/{{manufacturer.id}}" class="principal-wrap" title="{{manufacturer.name}}">
+                                    <a href="{{url('/')}}/manufacturer-detail/{{$manufacturer->id}}" class="principal-wrap" title="{{$manufacturer->name}}">
+                                    
                                         <div class="image-wrap">
-                                            {% if manufacturer.image is not empty %}
-                                                <img width="281" height="78" src="{{url('/')}}/uploads/manufacturer/{{ manufacturer.image }}" alt="Key Principals">
-                                            {% else %}
+                                            @if(isset($manufacturer))
+                                                <img width="281" height="78" src="{{asset('uploads/manufacturer/'.$manufacturer->image)}}" alt="Key Principals">
+                                            @else{
                                                 <img src="{{url('/')}}/theme/frontend/assets/images/no-images.webp" alt="Key Principals">
-                                            {% endif %}
+                                            }
+                                            @endif
                                         </div>
                                     </a>
                                 </div>
-                            {% endfor %}
+                                @endforeach
                             </div>
                             <!-- Add Pagination -->
                             <div class="swiper-pagination"></div>
@@ -146,9 +149,9 @@
                     </div>
                 </div>
             </div>
-             {% endif %}
+            @endif
         </section>
-        <!-- End Key Principals Section -->--}}
+        <!-- End Key Principals Section -->
 
         <!-- About Section -->
         <section class="section bg-muted about-info-wrap pt-3">
@@ -420,8 +423,10 @@
             </div>
         </section>
 
-        {{--<!-- News and Update Section -->
-        {% if newsList is not empty %}
+
+        
+        <!-- News and Update Section -->
+        {{--@if(count($newsList))
         <section class="section bg-muted top-square-image">
             <div class="container">
                 <div class="row">
@@ -437,7 +442,7 @@
                     <div class="col-md-12">
                         <div class="news-slider-container swiper-container pb-80">
                             <div class="swiper-wrapper">
-                                {% for news in newsList %}
+                                @foreach($newsList)
                                 <div class="swiper-slide">
                                     <div class="news-wrap">
                                         <div class="image-wrap">
@@ -458,7 +463,7 @@
                                         <a href="{{ path('AboutNewsFront', { 'id': news.id }) }}">Learn more <img class="svgImg" src="{{url('/')}}/theme/frontend/assets/images/left-aerrow.svg" alt="Left"></a>
                                     </div>
                                 </div>
-                                {% endfor %}
+                                @endforeach
                             </div>
                             <!-- Add Pagination -->
                             <div class="swiper-pagination"></div>
@@ -472,8 +477,8 @@
                 </div>
             </div>
         </section>
-        {% endif %}
-        <!-- End News and Update Section -->--}}
+        @endif--}}
+        <!-- End News and Update Section -->
     </main>
     <!-- End Content -->
 @endsection

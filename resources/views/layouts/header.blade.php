@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light d-flex align-items-center justify-content-between">
-                            <a class="navbar-brand" href="{{$base_url}}">
+                            <a class="navbar-brand" href="{{url('/')}}">
                                 <img width="128" height="101" src="{{asset('assets/frontend/assets/images/brand.webp')}}" alt="Brand">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -28,26 +28,26 @@
                                     </form>
                                     <ul class="d-flex align-items-center">
                                         <!--<li>
-                                            <a href="{{$base_url}}">
-                                                <img class="svgImg" src="{{$base_url}}/theme/frontend/assets/images/sign-in.svg" alt="Signin">
+                                            <a href="{{url('/')}}">
+                                                <img class="svgImg" src="{{url('/')}}/theme/frontend/assets/images/sign-in.svg" alt="Signin">
                                                 Sign in
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{$base_url}}/">
-                                                <img class="svgImg" src="{{$base_url}}/theme/frontend/assets/images/status.svg" alt="Order status">
+                                            <a href="{{url('/')}}/">
+                                                <img class="svgImg" src="{{url('/')}}/theme/frontend/assets/images/status.svg" alt="Order status">
                                                 Order Status
                                             </a>
                                         </li>-->
                                         <li>
-                                            <a href="{{$base_url}}/cart">
+                                            <a href="{{url('/')}}/cart">
                                                 <img class="svgImg" src="{{asset('assets/frontend/assets/images/shopping-cart.svg')}}" alt="Cart">
                                                 Cart
                                             </a>
                                             <span class="badge" id="cart_count"></span>
                                         </li>
                                         <li>
-                                            <a href="{{$base_url}}/">
+                                            <a href="{{url('/')}}/">
                                                 <img class="svgImg" src="{{asset('assets/frontend/assets/images/support.svg')}}" alt="Support">
                                                 Support
                                             </a>
@@ -58,57 +58,62 @@
                                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                         <ul class="navbar-nav ml-auto">
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-item dropdown" href="{{$base_url}}/product-category" id="navbarDropdown"
+                                                <a class="nav-link dropdown-item dropdown" href="{{url('/')}}/product-category" id="navbarDropdown"
                                                    >
                                                     Products
                                                 </a>
                                                 <span class="trigger down-caret"></span>
                                                 {{-- <ul class="dropdown-menu dropdown-content">
-                                                    <li><a class="dropdown-item" href="{{$base_url}}/product-list?group=Electromechanical Components">Electromechanical Components</a></li>
-                                                    <li><a class="dropdown-item" href="{{$base_url}}/product-list?group=Passive Components">Passive Components</a></li>
-                                                    <li><a class="dropdown-item" href="{{$base_url}}/product-list?group=Power Electronics">Power Electronics</a></li>
-                                                    <li><a class="dropdown-item" href="{{$base_url}}/product-list?group=Interconnect">Interconnect</a></li>
-                                                    <li><a class="dropdown-item" href="{{$base_url}}/product-list?group=M2M">M2M</a></li>
-                                                    <li><a class="dropdown-item" href="{{$base_url}}/product-list?group=Semiconductor">Semiconductor</a></li>
-                                                    <li><a class="dropdown-item" href="{{$base_url}}/product-list?group=Display">Display</a></li>
-                                                    <li><a class="dropdown-item" href="{{$base_url}}/product-list?group=Active RF components">Active RF components</a></li>
-                                                    <li><a class="dropdown-item" href="{{$base_url}}/product-list?group=Batteries">Batteries</a></li>
+                                                    <li><a class="dropdown-item" href="{{url('/')}}/product-list?group=Electromechanical Components">Electromechanical Components</a></li>
+                                                    <li><a class="dropdown-item" href="{{url('/')}}/product-list?group=Passive Components">Passive Components</a></li>
+                                                    <li><a class="dropdown-item" href="{{url('/')}}/product-list?group=Power Electronics">Power Electronics</a></li>
+                                                    <li><a class="dropdown-item" href="{{url('/')}}/product-list?group=Interconnect">Interconnect</a></li>
+                                                    <li><a class="dropdown-item" href="{{url('/')}}/product-list?group=M2M">M2M</a></li>
+                                                    <li><a class="dropdown-item" href="{{url('/')}}/product-list?group=Semiconductor">Semiconductor</a></li>
+                                                    <li><a class="dropdown-item" href="{{url('/')}}/product-list?group=Display">Display</a></li>
+                                                    <li><a class="dropdown-item" href="{{url('/')}}/product-list?group=Active RF components">Active RF components</a></li>
+                                                    <li><a class="dropdown-item" href="{{url('/')}}/product-list?group=Batteries">Batteries</a></li>
                                                 </ul> --}}
                                                 <ul class="dropdown-menu dropdown-content">
                                                 <li class="navBack" tabindex="0"><span>Back</span></li>
-                                                {{--% for groupKey, groupCategories in productService.postLoad %}
+                                               @php
+                                                $postLoad = postLoad();
+                                                @endphp
+                                                @if(count($postLoad))
+                                                @foreach($postLoad as  $groupKey => $groupCategories)
                                                     <li class="dropdown">
-                                                        <a class="dropdown-item dropdown" href="{{$base_url}}/product-category/{{productService.getGroupCategoryId(groupKey)}}">{{groupKey}}
+                                                        <a class="dropdown-item dropdown" href="{{url('/')}}/product-category/">{{$groupKey}}
                                                         </a>
                                                         <span class="trigger right-caret"></span>
                                                         <ul class="dropdown-menu sub-menu dropdown-content" style="display:none;" >
-                                                        {% for categoryKey, ProductCategory in groupCategories %}
+                                                        @foreach($groupCategories as $categoryKey => $ProductCategory)
                                                             <li class="dropdown">
-                                                            <a class="dropdown-item category_click"  href="#" data-group-category="{{groupKey}}" data-id="{{categoryKey}}" data-type="category">{{ProductCategory['pc_name']}}
+                                                            <a class="dropdown-item category_click"  href="#" data-group-category="{{$groupKey}}" data-id="{{$categoryKey}}" data-type="category">{{$ProductCategory['pc_name']}}
                                                                     </a>
-                                                                {% if ProductCategory.no_data is defined %}
-                                                                {% else %}
+                                                                @if(!isset($ProductCategory))
                                                                 <span class="trigger right-caret"></span>
-                                                                {% endif %}
+                                                                @endif
                                                                 <ul class="dropdown-menu sub-menu dropdown-content" style="display:none;">
-                                                                {% for productCategoryDetailsKey, productCategoryDetails in ProductCategory %}
-                                                                    {% if productCategoryDetailsKey == "pc_name" or productCategoryDetailsKey == "manufactures" %}
-                                                                    {% else %} 
-                                                                    {% for subCategoryKey, subCategoryValue in productCategoryDetails %}
-                                                                        <li><a class="dropdown-item category_click" data-group-category="{{groupKey}}" href="#" data-id="{{productCategoryDetailsKey}}" data-type="sub_category">{{subCategoryValue}}</a></li>
-                                                                {% endfor %}
-                                                                {% endif %}
-                                                                {% endfor %}
+                                                                @foreach($ProductCategory as $productCategoryDetailsKey => $productCategoryDetails)
+                                                                    @if($productCategoryDetailsKey == "pc_name" || $productCategoryDetailsKey == "manufactures")
+                                                                    @else
+                                                                        @foreach($productCategoryDetails as $subCategoryValue)
+                                                                    
+                                                                        <li><a class="dropdown-item category_click" data-group-category="{{$groupKey}}" href="#" data-id="{{$productCategoryDetailsKey}}" data-type="sub_category">{{$subCategoryValue}}</a></li>
+                                                                        @endforeach
+                                                                        @endif
+                                                                        @endforeach
                                                                 </ul>
                                                             </li>
-                                                        {% endfor %}
+                                                            @endforeach
                                                         </ul>
                                                     </li>
-                                                {% endfor %--}}
+                                                    @endforeach
+                                                    @endif
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link " href="{{$base_url}}/manufacturers" >
+                                                <a class="nav-link " href="{{url('/')}}/manufacturers" >
                                                     Manufacturer
                                                 </a>
                                                 <!--<ul class="dropdown-menu" aria-labelledby="navbarDropdown"
@@ -123,30 +128,30 @@
                                                 </ul>-->
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link " href="{{$base_url}}/industry" id="navbarDropdown"
+                                                <a class="nav-link " href="{{url('/')}}/industry" id="navbarDropdown"
                                                    role="button" aria-expanded="false">
                                                     Market Segments
                                                 </a>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link" href="{{$base_url}}/service" id="navbarDropdown"  role="button" aria-expanded="false">
+                                                <a class="nav-link" href="{{url('/')}}/service" id="navbarDropdown"  role="button" aria-expanded="false">
                                                     Services
                                                 </a>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link " href="{{$base_url}}/about" id="navbarDropdown"
+                                                <a class="nav-link " href="{{url('/')}}/about" id="navbarDropdown"
                                                    role="button" aria-expanded="false">
                                                     About Us
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{$base_url}}/contact">Contact Us</a>
+                                                <a class="nav-link" href="{{url('/')}}/contact">Contact Us</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{$base_url}}/career">Career</a>
+                                                <a class="nav-link" href="{{url('/')}}/career">Career</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="btn btn-primary" href="{{$base_url}}/cart" tabindex="-1" aria-disabled="true">Get Quote</a>
+                                                <a class="btn btn-primary" href="{{url('/')}}/cart" tabindex="-1" aria-disabled="true">Get Quote</a>
                                             </li>
                                         </ul>
                                     </div>

@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-xl-5">
                             <div class="footer-info">
-                                <a href="{{$base_url}}" class="footer-brand">
+                                <a href="{{url('/')}}" class="footer-brand">
                                     <img width="128" height="101" src="{{asset('assets/frontend/assets/images/brand.webp')}}" alt="brand">
                                 </a>
                                 <!-- <p>Unified, a customer-focused top electronic components distributor was started in the Year
@@ -66,11 +66,11 @@
                                     <h3>QUICK LINKS</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="{{$base_url}}/product-category">Products</a></li>
-                                    <li><a href="{{$base_url}}/manufacturers">Manufacturers</a></li>
-                                    <li><a href="{{$base_url}}/industry">Market Segments</a></li>
-                                    <li><a href="{{$base_url}}/service">Services</a></li>
-                                    <li><a href="{{$base_url}}/about">About Us</a></li>
+                                    <li><a href="{{url('/')}}/product-category">Products</a></li>
+                                    <li><a href="{{url('/')}}/manufacturers">Manufacturers</a></li>
+                                    <li><a href="{{url('/')}}/industry">Market Segments</a></li>
+                                    <li><a href="{{url('/')}}/service">Services</a></li>
+                                    <li><a href="{{url('/')}}/about">About Us</a></li>
                                 </ul>
                             </div>
                             <!-- <div class="footer-links">
@@ -78,10 +78,10 @@
                                     <h3>NEWS & UPDATES</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="{{$base_url}}">Company Updates</a></li>
-                                    <li><a href="{{$base_url}}">Events</a></li>
-                                    <li><a href="{{$base_url}}">New Product</a></li>
-                                    <li><a href="{{$base_url}}">Press Release</a></li>
+                                    <li><a href="{{url('/')}}">Company Updates</a></li>
+                                    <li><a href="{{url('/')}}">Events</a></li>
+                                    <li><a href="{{url('/')}}">New Product</a></li>
+                                    <li><a href="{{url('/')}}">Press Release</a></li>
                                 </ul>
                             </div> -->
                             <div class="footer-links">
