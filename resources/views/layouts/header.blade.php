@@ -113,7 +113,7 @@
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link " href="{{url('/')}}/manufacturers" >
+                                                <a class="nav-link " href="{{route('manufacturers')}}" >
                                                     Manufacturer
                                                 </a>
                                                 <!--<ul class="dropdown-menu" aria-labelledby="navbarDropdown"
@@ -128,13 +128,13 @@
                                                 </ul>-->
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link " href="{{url('/')}}/industry" id="navbarDropdown"
+                                                <a class="nav-link " href="{{route('industry')}}" id="navbarDropdown"
                                                    role="button" aria-expanded="false">
                                                     Market Segments
                                                 </a>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link" href="{{url('/')}}/service" id="navbarDropdown"  role="button" aria-expanded="false">
+                                                <a class="nav-link" href="{{route('Services')}}" id="navbarDropdown"  role="button" aria-expanded="false">
                                                     Services
                                                 </a>
                                             </li>

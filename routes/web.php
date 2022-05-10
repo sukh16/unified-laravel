@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\IndustryController;
+use App\Http\Controllers\ManufacturersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +28,6 @@ Route::get('/career', [CareerController::class, 'career'])->name('career');
 Route::get('/contact-us', [ContactController::class, 'contact_us'])->name('contact_us');
 Route::post('/contact-page-form', [ContactController::class, 'contact_page_form'])->name('contact_page_form');
 Route::get('/about', [AboutController::class, 'About'])->name('About');
+Route::get('/Services', [ServicesController::class, 'Services'])->name('Services');
+Route::get('/industry', [IndustryController::class, 'industry'])->name('industry');
+Route::get('/manufacturers', [ManufacturersController::class, 'manufacturers'])->name('manufacturers');

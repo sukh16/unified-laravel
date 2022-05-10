@@ -56,7 +56,7 @@
                                     <input type="text" name="country" class="form-control" id="country" placeholder="Country*">
                                 </div>
                             </div>
-                                <div class="form-group">
+                               {{-- <div class="form-group">
                                     <div class="input-number">
                                         <select class="form-control" name="phone_number" id="exampleFormControlSelect1">
                                             <option>+91</option>
@@ -67,7 +67,7 @@
                                         </select>
                                         <input type="text" class="form-control" placeholder="Phone Number">
                                     </div>
-                                </div> 
+                                </div> --}}
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Or Upload BOM</label>
