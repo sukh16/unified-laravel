@@ -76,13 +76,13 @@
                                                 </ul> --}}
                                                 <ul class="dropdown-menu dropdown-content">
                                                 <li class="navBack" tabindex="0"><span>Back</span></li>
-                                              {{-- @php
+                                               @php
                                                 $postLoad = postLoad();
                                                 @endphp
                                                 @if(count($postLoad))
                                                 @foreach($postLoad as  $groupKey => $groupCategories)
                                                     <li class="dropdown">
-                                                        <a class="dropdown-item dropdown" href="{{url('/')}}/product-category/">{{$groupKey}}
+                                                        <a class="dropdown-item dropdown" href="{{route('product_category',$groupKey)}}">{{$groupKey}}
                                                         </a>
                                                         <span class="trigger right-caret"></span>
                                                         <ul class="dropdown-menu sub-menu dropdown-content" style="display:none;" >
@@ -109,7 +109,7 @@
                                                         </ul>
                                                     </li>
                                                     @endforeach
-                                                    @endif--}}
+                                                    @endif
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">

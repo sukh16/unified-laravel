@@ -27,6 +27,7 @@
         <link rel="stylesheet" href="{{asset('assets/frontend/assets/vender/datatable/dataTables.bootstrap4.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/frontend/assets/vender/datatable/responsive.bootstrap4.min.css')}}">
         <!-- CSS Front Template -->
+        <script src="{{asset('assets/frontend/assets/vender/jquery/jquery-3.5.1.min.js')}}"></script>
         @yield('css')
         <link rel="stylesheet" href="{{asset('assets/frontend/assets/vender/jquery-ui/jquery-ui.css')}}">
         <link rel="stylesheet" href="{{asset('assets/frontend/assets/css/style.css')}}">
@@ -44,7 +45,6 @@
          @include('layouts.footer')
         <!-- End Footer -->
         <!-- JS Global Compulsory -->
-        <script src="{{asset('assets/frontend/assets/vender/jquery/jquery-3.5.1.min.js')}}"></script>
         <script defer src="{{asset('assets/frontend/assets/vender/bootstrap/js/bootstrap.min.js')}}"></script>
         <!-- Swiper js -->
         @yield('script')

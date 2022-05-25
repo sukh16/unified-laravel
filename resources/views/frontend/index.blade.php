@@ -18,7 +18,7 @@
                                                     <div class="col-md-8">
                                                         <h2>Wide range of products spanning multiple industries</h2>
                                                         <p>Personalization, efficiency in execution, and end-to-end support make our services a value-add to all projects</p>
-                                                        <a href="{{url('/')}}/industry" class="btn btn-primary btn-big-fonts  btn-white mt-5">Know more</a>
+                                                        <a href="{{route('industry')}}" class="btn btn-primary btn-big-fonts  btn-white mt-5">Know more</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -34,7 +34,7 @@
                                                     <div class="col-md-8">
                                                         <h2>Efficient sourcing and on-time distribution services</h2>
                                                         <p>JIT delivery, special packaging, design assistance, and many other advantageous services provided with efficient product sourcing</p>
-                                                        <a href="{{url('/')}}/service" class="btn btn-primary btn-white btn-big-fonts  mt-5">Know more</a>
+                                                        <a href="{{route('Services')}}" class="btn btn-primary btn-white btn-big-fonts  mt-5">Know more</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -50,7 +50,7 @@
                                                     <div class="col-md-8">
                                                         <h2>Extensive network of products and suppliers</h2>
                                                         <p>No matter the requirements and specifications, Unified finds the best components and suppliers for any industry undertaking</p>
-                                                        <a href="{{url('/')}}/cart" class="btn btn-primary btn-white btn-big-fonts  mt-5">Submit quote</a>
+                                                        <a href="{{route('cart')}}" class="btn btn-primary btn-white btn-big-fonts  mt-5">Submit quote</a>
                                                     </div>
                                                 </div>
                                             </div>
